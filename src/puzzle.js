@@ -15,20 +15,20 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 const AnswerButton = (props) => {
   let btn;
-switch (props.isAnswerCorrect){
-  case true:
-  btn =  
-    <button onClick={props.nextQuestion} className="btn btn-success"></button>
-    break;
-  case false:
-  btn =  
-    <button onClick={props.incorrectAnswer} className="btn btn-danger"></button>
-    break;
-  default:
-  btn =  
-    <button onClick={props.calculateAnswer}>Go</button>
-    break;
-  }
+  switch (props.isAnswerCorrect){
+    case true:
+      btn =  
+        <button onClick={props.nextQuestion} className="btn btn-success"></button>
+      break;
+    case false:
+      btn =  
+        <button onClick={props.incorrectAnswer} className="btn btn-danger"></button>
+      break;
+    default:
+      btn =  
+      <button onClick={props.calculateAnswer}>Go</button>
+      break;
+    }
   return btn;
 }  
 

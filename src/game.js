@@ -80,7 +80,7 @@ class Game extends React.Component {
     render() {
       const { chosenTables, firstNumber, secondNumber, gameStarted } = this.state;
       return (
-        <div>
+        <div className="container">
           <AllTables addToChosenTables={this.addToChosenTables} 
                       gameStarted={gameStarted}/>
           <br />
