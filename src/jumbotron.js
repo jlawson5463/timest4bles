@@ -17,7 +17,7 @@ class Jumbotron extends React.Component {
         return (
             <div className="jumbotron">
                <h1 className="display-4">Learn your times tables here</h1>
-               <p className="lead">Click one or more tables below to start practicing</p>
+               <p className="lead">Click on an activity below to start practicing</p>
                 </div>
         )
     }

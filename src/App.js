@@ -17,6 +17,7 @@ import 'bootstrap/dist/js/bootstrap';
 import Game from './game.js'
 import NavBar from './nav.js'
 import Jumbotron from './jumbotron.js'
+import Sections from './section.js';
 
 
 const navbar = () => {}
@@ -37,6 +38,7 @@ class App extends React.Component {
       <div className='App'>
         <NavBar {...navbar}/>
         <Jumbotron />
+        <Sections />
         <Game />
       </div>
     );
