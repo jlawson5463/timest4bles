@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
-import _ from 'lodash';
 import {
   Container,
   Row,
@@ -22,7 +21,6 @@ const NavBrand = (props) => {
 }
   
 const NavMenu = (props) => {
-    console.log(props)
     return(
             props.links.map((link, i) =>
                 <NavLink key={i} linkTo={link.linkTo} text={link.text} active={link.active} />
@@ -37,7 +35,6 @@ const NavLink = (props) => {
       );    
 }
   
-// create classes
 class NavBar extends React.Component {
     render() {
       return(
