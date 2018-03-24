@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import logo from './logo.svg';
-import './App.css';
+import logo from '../logo.svg';
+import '../App.css';
 import _ from 'lodash';
 import {
   Container,
@@ -14,10 +14,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'jquery';
 import 'bootstrap/dist/js/bootstrap';
 
-import Game from './game.js'
-import NavBar from './nav.js'
-import Jumbotron from './jumbotron.js'
-import Sections from './section.js';
+import Game from './game'
+import NavBar from './nav'
+import Jumbotron from './jumbotron'
+import Sections from './section';
 import Navbardata from './navbarData';
 
 class App extends React.Component {

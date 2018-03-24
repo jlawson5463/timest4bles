@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import logo from './logo.svg';
-import './App.css';
+import logo from '../logo.svg';
+import '../App.css';
 import {
   Container,
   Row,
@@ -12,7 +12,7 @@ import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'jquery';
 import 'bootstrap/dist/js/bootstrap';
-import styles from './styles.js'
+import styles from '../styles.js'
   
 const NavBrand = (props) => {
     return(<a className="navbar-brand" href={props.linkTo}>{props.text}</a> )
