@@ -12,20 +12,17 @@ import {
 } from 'reactstrap';
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
-
 import Puzzle from './puzzle.js'
 
 const showOrHideClassName = (props) => {
-  if (props.gameStarted === true) return "hide";
-  return "show"    
+  return props.gameStarted ? "hide" : "show"   
 }
 
 const ActiveTables = (props) => {
   return (
     <div className='activeTablesDiv'>
       <div>
-       {props.chosenTables.map((num, i)=>
-          <h4 key={i}>{num}</h4>)}
+       {props.chosenTables.map((num, i) => <h4 key={i}>{num}</h4>)}
       </div>      
           <button className={showOrHideClassName(props)} onClick={() => props.startGame()}>Go...</button>       
       </div>
@@ -48,8 +45,7 @@ class Game extends React.Component {
       firstNumber: null,
       gameStarted: false,
       secondNumber: null 
-    })
-  
+    })  
     state = Game.initialState()
   
     addToChosenTables = (numberChosen) => {

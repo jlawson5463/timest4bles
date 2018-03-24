@@ -18,25 +18,13 @@ import Game from './game.js'
 import NavBar from './nav.js'
 import Jumbotron from './jumbotron.js'
 import Sections from './section.js';
-
-
-const navbar = () => {}
-  
-    navbar.brand = {linkTo: "#", text: "Times T4bles"};
-    navbar.links = [
-      {linkTo: "#", text: "Home"},
-      {linkTo: "#", text: "About"},
-      {linkTo: "#", text: "Learn"},
-      {linkTo: "#", text: "Play", active: true},
-      {linkTo: "#", text: "Test"},
-      {linkTo: "#", text: "Contact"}
-    ]
+import Navbardata from './navbarData';
 
 class App extends React.Component {
     render() {
     return (
       <div className='App'>
-        <NavBar {...navbar}/>
+        <NavBar {...Navbardata}/>
         <Jumbotron />
         <Sections />
         <Game />

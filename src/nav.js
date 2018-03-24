@@ -15,9 +15,7 @@ import 'bootstrap/dist/js/bootstrap';
 import styles from './styles.js'
   
 const NavBrand = (props) => {
-    return(
-        <a className="navbar-brand" href={props.linkTo}>{props.text}</a>
-      )
+    return(<a className="navbar-brand" href={props.linkTo}>{props.text}</a> )
 }
   
 const NavMenu = (props) => {

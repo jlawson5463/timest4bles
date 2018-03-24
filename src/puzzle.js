@@ -52,8 +52,7 @@ class Puzzle extends React.Component  {
     }
      
     className = () => {
-      if (this.props.gameStarted === true) return "show";
-      return "hide"    
+      return this.props.gameStarted ? 'show' : 'hide'
     }
     calculateAnswer = () => { 
       this.setState({
