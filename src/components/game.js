@@ -1,17 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import logo from '../logo.svg';
-import '../App.css';
+//import logo from '../logo.svg';
 import _ from 'lodash';
-
 import {
   Container,
   Row,
   Col,
   Button
 } from 'reactstrap';
-import 'font-awesome/css/font-awesome.min.css';
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'font-awesome/css/font-awesome.min.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 import Puzzle from './puzzle.js'
 
 const showOrHideClassName = (props) => {
@@ -51,8 +49,7 @@ class Game extends React.Component {
     addToChosenTables = (numberChosen) => {
       if (this.state.chosenTables.indexOf(numberChosen) >= 0) { return; }
       this.setState(prevState => ({
-        chosenTables: prevState.chosenTables.concat(numberChosen)
-        // order chosen tables by value not order chosen
+        chosenTables: prevState.chosenTables.concat(numberChosen).sort(function (a, b) {  return a - b;  })
     }))
   }
   startGame = () => {

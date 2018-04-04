@@ -1,32 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import logo from '../logo.svg';
-import '../App.css';
-import _ from 'lodash';
-
-import {
-  Container,
-  Row,
-  Col,
-  Button
-} from 'reactstrap';
-import 'font-awesome/css/font-awesome.min.css';
-import 'bootstrap/dist/css/bootstrap.css';
+// import logo from '../logo.svg';
+// import _ from 'lodash';
+// import {
+//   Container,
+//   Row,
+//   Col,
+//   Button
+// } from 'reactstrap';
+// import 'font-awesome/css/font-awesome.min.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 
 const AnswerButton = (props) => {
   let btn;
   switch (props.isAnswerCorrect){
     case true:
-      btn =  
-        <button onClick={props.nextQuestion} className="btn btn-success"></button>
+      btn =  <button onClick={props.nextQuestion} className="btn btn-success"></button>
       break;
     case false:
-      btn =  
-        <button onClick={props.incorrectAnswer} className="btn btn-danger"></button>
+      btn =  <button onClick={props.incorrectAnswer} className="btn btn-danger"></button>
       break;
     default:
-      btn =  
-      <button onClick={props.calculateAnswer}>Go</button>
+      btn =  <button onClick={props.calculateAnswer}>Go</button>
       break;
     }
   return btn;
@@ -35,25 +30,21 @@ const AnswerButton = (props) => {
 class Puzzle extends React.Component  {
     state = {
       givenAnswer: '',
-        actualAnswer: null,
-        isAnswerCorrect: null,
-        button : this.answerButton,
-        totalCorrectFirstTime: 0,
-        failedAttemps: 0
-    }
-  
+      actualAnswer: null,
+      isAnswerCorrect: null,
+      button : this.answerButton,
+      totalCorrectFirstTime: 0,
+      failedAttemps: 0
+    }  
     resetInputs = () => {
-      this.setState({
-        givenAnswer: '',
-        actualAnswer: null,
-        isAnswerCorrect: null,
-        button: this.answerButton
-      })
-    }
-     
-    className = () => {
-      return this.props.gameStarted ? 'show' : 'hide'
-    }
+        this.setState({
+          givenAnswer: '',
+          actualAnswer: null,
+          isAnswerCorrect: null,
+          button: this.answerButton
+        })
+    }  
+      
     calculateAnswer = () => { 
       this.setState({
         actualAnswer: this.props.firstNumber * this.props.secondNumber
@@ -87,34 +78,23 @@ class Puzzle extends React.Component  {
       // when 6 failed attempts then reveal the answer and reset everythings
     }
     nextQuestion = () => {
-      this.setState({
-        givenAnswer: '',
-        actualAnswer: null,
-        isAnswerCorrect: null,
-        button : this.answerButton
-      }, this.props.startGame)
+      this.resetInputs();
+      this.props.startGame;
     }
     incorrectAnswer = () => {
-      this.setState(prevState => ({
-        givenAnswer: '',
-        actualAnswer: null,
-        isAnswerCorrect: null,
-        button : this.answerButton
-    }))
-  }
+      this.resetInputs();
+    }
     
     render() {
     return (
-      <div className={this.className()}>
-        <h2 >{this.props.firstNumber} X {this.props.secondNumber} = 
+      <div className={this.props.gameStarted ? 'show' : 'hide'}>
+        <p>{this.props.firstNumber} X {this.props.secondNumber} = </p> 
             <input className='puzzleInput' type='number' value={this.state.givenAnswer} 
-             // onClick={}
               onChange={(event) => this.setState({ givenAnswer: event.target.value})}/>
               <AnswerButton isAnswerCorrect={this.state.isAnswerCorrect}
                             calculateAnswer={this.calculateAnswer}
                             nextQuestion={this.nextQuestion}
                             incorrectAnswer={this.incorrectAnswer}/>
-              </h2>            
       </div>
     )}
   }
